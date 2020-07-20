@@ -5,6 +5,8 @@ Use start.sh to get started.
 
 This config is biased towards C, so C++ will take a tiny bit more work on the script side.
 For the sake of completeness, here's the two possible options as source code blocks.
+If you're using Emacs, just execute them via =C-c C-c=.
+
 #+BEGIN_SRC sh
 sh start.sh c
 #+END_SRC
