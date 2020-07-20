@@ -20,5 +20,9 @@ int main()
   return 0;
 }" > src/main.cpp
 fi
-
+if [ $# -eq 2 ]
+then
+    sed -i "s/main/$2/g" CMakeLists.txt;
+    sed -i "s/main/$2/g" Makefile;
+fi
 cd dist; cmake ..; cd ..;
