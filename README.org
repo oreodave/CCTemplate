@@ -1,6 +1,6 @@
 #+TITLE: CCTemplate
 
-The major, C and C++ template with all bells and whistles.
+The ultimate C/C++ template with all bells and whistles.
 Use start.sh to get started.
 
 This config is biased towards C, so C++ will take a tiny bit more work on the script side.
