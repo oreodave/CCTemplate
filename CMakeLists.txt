@@ -1,6 +1,5 @@
 ## Metadata
 cmake_minimum_required(VERSION 3.10.2)
-
 set(THIS main) # Name of project
 project(${THIS} C)
 
@@ -10,6 +9,7 @@ set(CMAKE_CXX_COMPILER clang++)
 set(CMAKE_C_STANDARD 11)
 set(CMAKE_CXX_STANDARD 17)
 SET(CMAKE_POSITION_INDEPENDENT_CODE ON)
+SET(CMAKE_EXPORT_COMPILE_COMMANDS ON)
 
 ## Variables for files
 file(GLOB_RECURSE HEADERS "includes/*.h")
