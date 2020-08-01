@@ -6,13 +6,16 @@
 
 OUT=dist/main
 
-.PHONY: run
-run: $(out)
-   $(MAKE) build
-   ./$^
+.PHONY: $(OUT)
+$(OUT):
+	@$(MAKE) -sC dist
 
-.PHONY: build
-build:
-  @cd dist; make;
+.PHONY: run
+run: $(OUT)
+	 @./$^
+
+.PHONY: clean
+clean:
+	@$(MAKE) -sC dist clean
 
 # end
