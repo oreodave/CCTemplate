@@ -3,6 +3,7 @@
 
 #define PROGRAM_NAME main
 #define PROGRAM_VERSION 0.0.1
+// comma delimited list of arguments. () means critical [] means optional
 #define PROGRAM_ARGUMENTS NULL
 
 #include <stdio.h>
