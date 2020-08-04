@@ -5,7 +5,7 @@
 ;;; Code:
 
 (let ((dx:cc-type (completing-read "Enter type of project: " '(c cpp) nil t))
-      (dx:cc-project-name (completing-read "Enter name of project: " nil nil t)))
+      (dx:cc-project-name (completing-read "Enter name of project: " nil)))
   (ignore-errors
     (make-directory "dist")
     (make-directory "includes")
@@ -13,16 +13,17 @@
     (delete-file "start.sh")
     (delete-file "LICENSE")
     (delete-file "start.el"))
+  
   (when (string= dx:cc-type "cpp")
     (delete-file "src/main.c")
     (with-temp-buffer (find-file "CMakeLists.txt")
-      (replace-string "main" dx:cc-project-name)
-      (replace-string ".c" ".cpp")
-      (replace-string ".h" ".hpp")
-      (replace-string "${THIS} C" "${THIS} CXX")
-      (save-buffer))
+                      (replace-string "main" dx:cc-project-name)
+                      (replace-string ".c" ".cpp")
+                      (replace-string ".h" ".hpp")
+                      (replace-string "${THIS} C" "${THIS} CXX")
+                      (save-buffer))
     (with-temp-buffer (find-file "src/main.cpp")
-      (insert "#include<iostream>
+                      (insert "#include<iostream>
 
 using std::cout;
 using std::endl;
@@ -33,9 +34,10 @@ int main()
   return 0;
 }
 ")
-      (save-buffer)))
+                      (save-buffer)))
   (with-temp-buffer (find-file "Makefile")
-    (replace-string "main" dx:cc-project-name)))
+                    (replace-string "main" dx:cc-project-name)
+                    (save-buffer)))
 
 (provide 'start)
 ;;; start.el ends here
