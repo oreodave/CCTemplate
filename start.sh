@@ -2,7 +2,7 @@
 
 mkdir dist includes;
 echo "" > README.org;
-rm -rfv start.sh LICENSE;
+rm -rfv start.sh LICENSE start.el;
 
 # Now for the hard part
 if [[ $1 == "cpp" ]]
